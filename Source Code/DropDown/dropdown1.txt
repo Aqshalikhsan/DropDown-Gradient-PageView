@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+
+void main () {
+runApp(MyApps());
+
+
+}
+class MyApps extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Homepage(),
+    );
+  }
+}
+
+class Homepage extends StatelessWidget {
+
+ final List <String> data = [
+    "Aqshal",
+    "Nur",
+    "Ikhsan",
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('DropDown'),
+      ),
+      body: Center(
+        child: DropdownButton(
+          onChanged: (value){
+            print(value);
+          },
+          items: data
+          .map(
+            (e) => DropdownMenuItem(
+              value: e,
+            child: Text(e),
+            ),
+            )
+            .toList(),
+          ),
+      ),
+    
+    );
+  }
+}

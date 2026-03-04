@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+import 'pages/Page2.dart';
+import 'pages/page1.dart';
+import 'pages/page3.dart';
+
+class Homepage extends StatelessWidget {
+final _controller = PageController();
+
+  Homepage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold (
+      body: PageView(
+        controller: _controller,
+        //berubah direksi scroll
+        scrollDirection: Axis.vertical,
+        children: [
+          Page1(),
+          Page2(),
+          Page3(),
+        ],
+      ),
+    );
+  }
+}
